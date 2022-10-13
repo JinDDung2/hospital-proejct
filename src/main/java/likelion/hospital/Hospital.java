@@ -2,14 +2,6 @@ package likelion.hospital;
 
 public class Hospital{
 
-    /*id(Pk)
-    address
-    district
-    category
-    emergency_room
-    name
-    subdivision*/
-
     private String id;                  // [0]
     private String address;             // [1]
     private String district;            // [1] 수정
@@ -33,6 +25,20 @@ public class Hospital{
         this.name = name;
         this.subdivision = subdivision;
         setDistrict();
+    }
+
+    public String getSqlInsertQuery() {
+        String sql = String.format("INSERT INTO `likelion-db`.`seoul_hospital`\n" +
+                "(`id`,`address`,`district`,`category`,`emergency_room`,`name`,`subdivision`)\n" +
+                "VALUES\n" +
+                "(\"%s\",\n" +
+                "\"%s\",\n" +
+                "\"%s\",\n" +
+                "\"%s\",\n" +
+                "%d\",\n" +
+                "\"%s\",\n" +
+                "\"%s\");", this.id, this.address, this.district, this.category, this.emergencyRoom, this.name, this.subdivision);
+        return sql;
     }
 
     private void setDistrict() {
