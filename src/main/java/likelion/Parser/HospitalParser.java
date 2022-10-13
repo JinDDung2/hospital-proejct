@@ -1,7 +1,7 @@
 package likelion.Parser;
 
-
 import likelion.hospital.Hospital;
+
 public class HospitalParser implements Parser<Hospital> {
 
     @Override
