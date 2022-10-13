@@ -21,6 +21,12 @@ class HospitalParserTest {
         assertEquals("서울특별시 금천구 벚꽃로 286 삼성리더스타워 111~114호 (가산동)", hospital.getAddress());
         // distract 확인
         assertEquals("서울특별시 금천구", hospital.getDistrict());
+        // emergencyRoom
+        assertEquals(2, hospital.getEmergencyRoom());
+        // category
+        assertEquals("C", hospital.getCategory());
+        // name
+        assertEquals("가산기대찬의원", hospital.getName());
     }
 
 }
