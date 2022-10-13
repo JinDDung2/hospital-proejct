@@ -13,12 +13,13 @@ public class HospitalParser implements Parser<Hospital> {
         String[] districtArr = splitted[1].split(" ");
         String district = districtArr[0] + " " + districtArr[1];
 
-        final String[] SUBDIVISION_LIST = {"내과", "치과", "피부과", "성형외과", "외과", "소아과", "가정의학과", "한의원"};
+        final String[] SUBDIVISION_LIST = {"내과", "치과", "피부과", "성형외과", "외과", "소아과", "가정의학과", "의원"};
         String subdivision = splitted[10];
         for (String divison : SUBDIVISION_LIST) {
-            subdivision.contains(divison);
-            subdivision = divison;
-            break;
+            if (subdivision.contains(divison))  {
+                subdivision = divison;
+                break;
+            }
         }
         return new Hospital(splitted[0], splitted[1], splitted[2], Integer.parseInt(splitted[6]), splitted[10], subdivision);
     }
