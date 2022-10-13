@@ -10,17 +10,34 @@ public class Hospital{
     name
     subdivision*/
 
-    private String id;
-    private String address;
-    private String district;
-    private String category;
-    private Integer emergency_room;
-    private String name;
-    private String subdivision;
+    private String id;                  // [0]
+    private String address;             // [1]
+    private String district;            // [1] 수정
+    private String category;            // [2]
+    private Integer emergencyRoom;     // [6]
+    private String name;                // [10]
+    private String subdivision;         // [10] 수정
 
     public Hospital(String id, String address) {
         this.id = id;
         this.address = address;
+        String[] splitted = address.split(" ");
+        this.district = String.format("%s %s", splitted[0], splitted[1]);
+    }
+
+    public Hospital(String id, String address, String category, Integer emergency_room, String name, String subdivision) {
+        this.id = id;
+        this.address = address;
+        this.category = category;
+        this.emergencyRoom = emergency_room;
+        this.name = name;
+        this.subdivision = subdivision;
+        setDistrict();
+    }
+
+    private void setDistrict() {
+        String[] splitted = this.address.split(" ");
+        this.district = String.format("%s %s", splitted[0], splitted[1]);
     }
 
     public String getId() {
@@ -39,8 +56,8 @@ public class Hospital{
         return category;
     }
 
-    public Integer getEmergency_room() {
-        return emergency_room;
+    public Integer getEmergencyRoom() {
+        return emergencyRoom;
     }
 
     public String getName() {
