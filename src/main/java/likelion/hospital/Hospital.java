@@ -37,7 +37,7 @@ public class Hospital{
                 "\"%s\",\n" +
                 "%d,\n" +
                 "\"%s\",\n" +
-                "\"%s\");\n", this.id, this.address, this.district, this.category, this.emergencyRoom, this.name, this.subdivision);
+                "\"%s\");\n", this.id, this.address, this.district, this.category, this.emergencyRoom, this.name, "");
         return sql;
     }
 

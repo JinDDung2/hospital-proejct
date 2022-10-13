@@ -71,7 +71,7 @@ class HospitalParserTest {
                 "\"C\",\n" +
                 "2,\n" +
                 "\"가산기대찬의원\",\n" +
-                "\"의원\");";
+                "\"\");";
         assertEquals(sql, hospital.getSqlInsertQuery());
     }
 
