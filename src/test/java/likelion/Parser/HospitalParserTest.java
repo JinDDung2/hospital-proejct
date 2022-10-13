@@ -27,6 +27,8 @@ class HospitalParserTest {
         assertEquals("C", hospital.getCategory());
         // name
         assertEquals("가산기대찬의원", hospital.getName());
+        // subdivison
+        assertEquals("의원", hospital.getSubdivision());
     }
 
 }
