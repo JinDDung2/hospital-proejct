@@ -13,7 +13,7 @@ public class HospitalParser implements Parser<Hospital> {
         String[] districtArr = splitted[1].split(" ");
         String district = districtArr[0] + " " + districtArr[1];
 
-        final String[] SUBDIVISION_LIST = {"내과", "치과", "피부과", "성형외과", "외과", "소아과", "가정의학과", "의원", "병원", "산부인과"};
+        final String[] SUBDIVISION_LIST = {"내과", "소아", "피부", "성형", "정형외과", "척추", "교정", "산부인과", "관절", "봉합", "화상", "골절", "영유아", "안과", "가정의학과", "비뇨기과", "치과", "의원", "한방병원", "병원", "외과"} ;
         String subdivision = splitted[10];
         for (String divison : SUBDIVISION_LIST) {
             if (subdivision.contains(divison))  {
